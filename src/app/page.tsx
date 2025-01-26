@@ -1,5 +1,6 @@
 import BookCard from "@/components/BookCard";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -36,10 +37,10 @@ const Home = () => {
               tempore vitae dolorum nulla fuga facilis ipsa deleniti nesciunt
               corporis assumenda et eligendi.
             </p>
-            <button className="bg-blue-400 rounded-lg flex items-center gap-5 p-3">
+            <Link href='/review/1' className="bg-blue-400 rounded-lg flex items-center gap-5 p-3">
               <Image src="/icons/book.svg" alt="Book" width={30} height={30} />
               Leave a Review
-            </button>
+            </Link>
           </div>
         </div>
         {/* imaged of the book */}
