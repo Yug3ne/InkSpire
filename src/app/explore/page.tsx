@@ -99,7 +99,7 @@ const BookCard = lazy(() => import('@/components/BookCard'))
 const BookLibrary = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   // Filter books based on search term and selected genre
   const filteredBooks = books.filter(
@@ -108,15 +108,11 @@ const BookLibrary = () => {
       (!selectedGenre || book.genre === selectedGenre)
   );
 
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-
   return (
     <div className="flex flex-col md:flex-row  text-white">
       {/* Sidebar */}
       <aside
-        className={` sm:bg-none w-64 p-6 fixed inset-y-0 left-0 transform ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } md:relative  md:translate-x-0 transition duration-200 ease-in-out z-20`}
+        className={` hidden md:block w-64 p-6  inset-y-0 left-0 transform  `}
       >
         <h2 className="text-2xl font-bold mb-6 text-[#0070f3]">Filters</h2>
         <div className="mb-6">
@@ -163,15 +159,6 @@ const BookLibrary = () => {
 
       {/* Main content */}
       <main className="flex-1 p-4 md:p-8">
-        <div className="flex items-center justify-between">
-          <button
-            className="md:hidden bg-[#0070f3] text-white p-2 rounded-full z-20"
-            onClick={toggleSidebar}
-            aria-label={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
-          >
-            {isSidebarOpen ? <X /> : <Menu />}
-          </button>
-        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredBooks.map((book) => (
             <Suspense key={book.id} fallback={<BookCardSkeleton/>}>

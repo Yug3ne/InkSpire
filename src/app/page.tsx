@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <section className="flex gap-5 flex-col mt-7">
       {/* book oberview */}
-      <div className="flex gap-8 flex-col md:flex-row">
+      <div className="flex-col-reverse flex gap-8 sm:flex-col-reverse md:flex-row">
         {/* book its sself */}
-        <div className="flex flex-1 gap-4 flex-col w-full md:w-2/3">
+        <div className="  md:flex flex-1 gap-4 flex-col w-full md:w-2/3">
           <h1 className=" text-5xl font-semibold text-white md:text-7xl">
             The Origin
           </h1>

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const BookCard = () => {
   return (
-    <Link href='/book/1' className="flex flex-col mt-5">
+    <Link href='/book/1' className="flex items-center flex-col mt-5">
       {/* image */}
       <div className="">
         <Image
