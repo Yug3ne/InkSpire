@@ -20,7 +20,7 @@ const ReviewModal = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [closeModal]);
 
   const handleClickOutside = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {

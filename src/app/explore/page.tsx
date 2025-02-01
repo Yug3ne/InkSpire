@@ -1,6 +1,6 @@
 "use client";
 import { lazy, Suspense, useState } from "react";
-import { Search, Menu, X, Divide } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 
 
 // Placeholder data for books with genres
