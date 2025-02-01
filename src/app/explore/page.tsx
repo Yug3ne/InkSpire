@@ -1,7 +1,7 @@
 "use client";
-import { Suspense, useState } from "react";
-import { Search, Menu, X } from "lucide-react";
-import BookCard from "@/components/BookCard";
+import { lazy, Suspense, useState } from "react";
+import { Search, Menu, X, Divide } from "lucide-react";
+
 
 // Placeholder data for books with genres
 const books = [
@@ -94,6 +94,8 @@ const books = [
 // Extract unique genres from books
 const genres = Array.from(new Set(books.map((book) => book.genre)));
 
+const BookCard = lazy(() => import('@/components/BookCard'))
+
 const BookLibrary = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
@@ -172,7 +174,7 @@ const BookLibrary = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredBooks.map((book) => (
-            <Suspense key={book.id} fallback={<h1>Loading...</h1>}>
+            <Suspense key={book.id} fallback={<BookCardSkeleton/>}>
               <BookCard />
             </Suspense>
           ))}
@@ -182,4 +184,19 @@ const BookLibrary = () => {
   );
 };
 
+const BookCardSkeleton: React.FC = () => (
+  <div className="bg-[#111111] rounded-lg shadow-lg overflow-hidden flex flex-col animate-pulse">
+    <div className="relative h-64 sm:h-72 bg-gray-700"></div>
+    <div className="p-4 flex-1 flex flex-col justify-between">
+      <div>
+        <div className="h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
+        <div className="h-4 bg-gray-700 rounded w-1/2"></div>
+      </div>
+      <div className="h-4 bg-gray-700 rounded w-1/3 mt-4"></div>
+    </div>
+  </div>
+)
+
 export default BookLibrary;
+
+
