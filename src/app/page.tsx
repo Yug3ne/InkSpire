@@ -1,4 +1,5 @@
 import BookCard from "@/components/BookCard";
+import { SquareChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,6 +41,10 @@ const Home = () => {
             <Link href='/review/1' className="bg-blue-400 rounded-lg flex items-center gap-5 p-3">
               <Image src="/icons/book.svg" alt="Book" width={30} height={30} />
               Leave a Review
+            </Link>
+            <Link href='/explore' className="bg-blue-400 rounded-lg flex items-center gap-5 p-3">
+            <SquareChevronRightIcon fill="black" size={30} />
+              See More
             </Link>
           </div>
         </div>
