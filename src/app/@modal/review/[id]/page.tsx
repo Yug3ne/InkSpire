@@ -1,13 +1,13 @@
 "use client";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const ReviewModal = () => {
   const router = useRouter();
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     router.back();
-  };
+  }, [router]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
