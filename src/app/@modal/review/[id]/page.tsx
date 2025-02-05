@@ -1,7 +1,6 @@
 "use client";
 import { useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { X } from "lucide-react";
 import Image from "next/image";
 
 const ReviewModal = () => {
