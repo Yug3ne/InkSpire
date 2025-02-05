@@ -40,7 +40,7 @@ export default function BookPage() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="flex  justify-center md:justify-end">
             <Image
-              src={"/images/bookCover.jpg"}
+              src={"/images/bookcover.jpg"}
               alt={`Cover of ${book.title}`}
               width={300}
               height={450}
