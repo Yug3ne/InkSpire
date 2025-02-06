@@ -24,7 +24,7 @@ const Navbar = () => {
         {/* right side with the menu bar and titles */}
         <div className="hidden md:flex items-center gap-8">
           <Link href="/explore">Explore</Link>
-          <Link href="/community">Community</Link>
+          {/*<Link href="/community">Community</Link>*/}
           <Link href="/profile">Profile</Link>
         </div>
 
@@ -45,9 +45,9 @@ const Navbar = () => {
 
         {menuOpen && (
           <div className="flex flex-col top-12 justify-center items-center gap-8 text-4xl absolute bg-black w-full h-screen md:hidden">
-            <Link href="/"onClick={() => setMenuOpen(false)} >Home</Link>
-            <Link href="/explore"onClick={() => setMenuOpen(false)} >Explore</Link>
-            <Link href="/community" onClick={() => setMenuOpen(false)}>Community</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)} >Home</Link>
+            <Link href="/explore" onClick={() => setMenuOpen(false)} >Explore</Link>
+            {/*<Link href="/community" onClick={() => setMenuOpen(false)}>Community</Link>*/}
             <Link href="/profile" onClick={() => setMenuOpen(false)}>Profile</Link>
           </div>
         )}
