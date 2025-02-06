@@ -33,7 +33,7 @@ Contributions are welcome! To contribute:
 
 ## Contact
 For any inquiries or contributions, feel free to reach out:
-- **Email**: your.email@example.com
+- **Email**: yugene.tech@gmail.com
 - **GitHub**: [Yug3ne](https://github.com/Yug3ene)
 - **Twitter**: [@_Yu_gene__](https://twitter.com/_Yu_gene__)
 
